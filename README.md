@@ -20,3 +20,5 @@ Using yarn :<br>
 Using NPM :<br>
 `npm devStart`<br>
 4) The App is running on `localhost:5000`!
+
+[![Visits Badge](https://badges.pufler.dev/visits/kevinadhiguna/short-ly)](https://github.com/kevinadhiguna)
