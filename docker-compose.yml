@@ -20,8 +20,14 @@ services:
     image: short-ly_image
     container_name: short-ly_ctr
     environment:
+      # Format: "mongodb://<mongodb_service_name_in_docker-compose>:<mongodb_running_port>/<mongodb_database>"
+      # In this case :
+      #  mongodb_service_name_in_docker-compose = mongo
+      #  mongodb_running_port = 27017 (default)
+      #  mongodb_database = urlShortener
+      #
       # If you have a connection issue to MongoDB in docker-compose, refer here : https://stackoverflow.com/questions/43162897/how-to-connect-to-mongodb-using-docker-compose/43163074
-      MONGODB_CONNECTION_URL: ${MONGODB_CONNECTION_URL}
+      MONGODB_CONNECTION_URL: "mongodb://mongo:27017/urlShortener"
       PORT: ${PORT:-5000}
     ports:
       - 5000:5000
