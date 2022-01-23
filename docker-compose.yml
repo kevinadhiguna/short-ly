@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   mongo:
+    # This app was developed using MongoDB v4.2.9 or v4.2.x
     image: mongo:4.2.9
     restart: always
     environment:
