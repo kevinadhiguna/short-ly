@@ -37,12 +37,12 @@ npm install
 
 Using yarn :
 ```
-yarn devStart
+yarn dev:start
 ```
 
 Using NPM :
 ```
-npm devStart
+npm dev:start
 ```
 
 <br />
