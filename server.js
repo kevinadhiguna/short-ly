@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const ShortUrl = require('./models/shortUrl');
 const app = express();
 
+require("dotenv").config();
+
 const MONGODB_CONNECTION_URL = process.env.MONGODB_CONNECTION_URL;
 
 mongoose.connect(MONGODB_CONNECTION_URL, {
