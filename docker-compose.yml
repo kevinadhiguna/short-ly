@@ -22,3 +22,5 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: P@ssw0rD
       MONGO_INITDB_DATABASE: urlShortener
+    networks:
+      - short-ly_mongo_network
