@@ -1,0 +1,14 @@
+# Dependencies
+node_modules
+
+# Environment variables
+.env
+
+# Demo images
+demo
+
+# Gitpod
+.gitpod.yml
+
+# Documentation
+README.md
