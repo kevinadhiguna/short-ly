@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "devStart": "nodemon server.js"
+    "dev:start": "nodemon server.js"
   },
   "license": "MIT",
   "dependencies": {
