@@ -20,6 +20,7 @@ services:
     image: short-ly_image
     container_name: short-ly_ctr
     environment:
+      # If you have a connection issue to MongoDB in docker-compose, refer here : https://stackoverflow.com/questions/43162897/how-to-connect-to-mongodb-using-docker-compose/43163074
       MONGODB_CONNECTION_URL: ${MONGODB_CONNECTION_URL}
       PORT: ${PORT:-5000}
     ports:
