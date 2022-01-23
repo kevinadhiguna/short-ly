@@ -14,3 +14,6 @@ services:
       - 5000:5000
     networks:
       - short-ly_mongo_network
+
+  mongo:
+    image: mongo:4.2.9
