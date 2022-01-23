@@ -38,3 +38,5 @@ services:
 
 networks:
   short-ly_mongo_network:
+volumes:
+  mongo-short-ly-volume:
