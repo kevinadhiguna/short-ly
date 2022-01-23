@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:4.2.9
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME:-root}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD:-P@ssw0rD}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE:-urlShortener}
+    volumes:
+      - 'mongo-short-ly-volume:/data/db'
+    networks:
+      - short-ly_mongo_network
+
+  short-ly:
+    depends_on:
+      - mongo
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    image: short-ly_image
+    container_name: short-ly_ctr
+    environment:
+      # Format: "mongodb://<mongodb_service_name_in_docker-compose>:<mongodb_running_port>/<mongodb_database>"
+      # In this case :
+      #  mongodb_service_name_in_docker-compose = mongo
+      #  mongodb_running_port = 27017 (default)
+      #  mongodb_database = urlShortener
+      #
+      # If you have a connection issue to MongoDB in docker-compose, refer here : https://stackoverflow.com/questions/43162897/how-to-connect-to-mongodb-using-docker-compose/43163074
+      MONGODB_CONNECTION_URL: "mongodb://mongo:27017/urlShortener"
+      PORT: ${PORT:-5000}
+    ports:
+      - 5000:5000
+    networks:
+      - short-ly_mongo_network
+
+networks:
+  short-ly_mongo_network:
+volumes:
+  mongo-short-ly-volume:
