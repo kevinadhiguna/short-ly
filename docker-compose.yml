@@ -17,3 +17,4 @@ services:
 
   mongo:
     image: mongo:4.2.9
+    restart: always
