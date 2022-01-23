@@ -27,3 +27,6 @@ services:
       - 5000:5000
     networks:
       - short-ly_mongo_network
+
+networks:
+  short-ly_mongo_network:
