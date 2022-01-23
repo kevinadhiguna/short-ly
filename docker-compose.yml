@@ -7,3 +7,6 @@ services:
       dockerfile: Dockerfile
     image: short-ly_image
     container_name: short-ly_ctr
+    environment:
+      MONGODB_CONNECTION_URL: mongodb://localhost/urlShortener
+      PORT: 5000
