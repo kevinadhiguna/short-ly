@@ -1,7 +1,19 @@
 version: '3.9'
 
 services:
+  mongo:
+    image: mongo:4.2.9
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME:-root}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD:-P@ssw0rD}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE:-urlShortener}
+    networks:
+      - short-ly_mongo_network
+
   short-ly:
+    depends_on:
+      - mongo
     build:
       context: .
       dockerfile: Dockerfile
@@ -12,15 +24,5 @@ services:
       PORT: ${PORT:-5000}
     ports:
       - 5000:5000
-    networks:
-      - short-ly_mongo_network
-
-  mongo:
-    image: mongo:4.2.9
-    restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME:-root}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD:-P@ssw0rD}
-      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE:-urlShortener}
     networks:
       - short-ly_mongo_network
