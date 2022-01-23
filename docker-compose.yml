@@ -6,3 +6,4 @@ services:
       context: .
       dockerfile: Dockerfile
     image: short-ly_image
+    container_name: short-ly_ctr
