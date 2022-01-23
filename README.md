@@ -33,7 +33,7 @@ npm install
 
 <br />
 
-3) Open a terminal or Command Prompt :<br>
+3) Open a terminal or Command Prompt, then run :<br>
 
 Using yarn :
 ```
