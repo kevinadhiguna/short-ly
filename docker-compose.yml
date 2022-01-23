@@ -8,6 +8,8 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME:-root}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD:-P@ssw0rD}
       MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE:-urlShortener}
+    volumes:
+      - 'mongo-short-ly-volume:/data/db'
     networks:
       - short-ly_mongo_network
 
