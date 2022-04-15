@@ -38,6 +38,7 @@ app.get('/:shortUrl', async(req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
+const HOSTNAME = preocess.env.HOSTNAME || "localhost";
 
 app.listen(PORT, () => {
   console.log(`Server has started on port ${PORT}`);
