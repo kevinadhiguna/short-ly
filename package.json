@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node server.js",
     "dev:start": "nodemon server.js",
-    "check": "prettier --check \"./**/*.{js,json,md,yml}\""
+    "check": "prettier --check \"./**/*.{js,json,md,yml}\"",
+    "format": "prettier --write \"./**/*.{js,json,md,yml}\""
   },
   "license": "MIT",
   "dependencies": {
