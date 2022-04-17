@@ -1,11 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const compression = require("compression");
 const { createHttpTerminator } = require("http-terminator");
 
 const ShortUrl = require('./models/shortUrl');
 const app = express();
 
 require("dotenv").config();
+
+app.use(compression());
 
 const MONGODB_CONNECTION_URL = process.env.MONGODB_CONNECTION_URL;
 
