@@ -12,7 +12,7 @@ require("dotenv").config();
 app.use(compression());
 app.use(helmet());
 
-const MONGODB_CONNECTION_URL = process.env.MONGODB_CONNECTION_URL;
+const MONGODB_CONNECTION_URL = process.env.MONGODB_CONNECTION_URL || "mongo://localhost:27017";
 
 mongoose.connect(MONGODB_CONNECTION_URL, {
     useNewUrlParser: true,
