@@ -58,6 +58,11 @@ You can format code using prettier :
 yarn format
 ```
 
+If you want to only check whether code is formatted properly or not, run :
+```
+yarn run check
+```
+
 <br />
 
 [![Visits Badge](https://badges.pufler.dev/visits/kevinadhiguna/short-ly)](https://github.com/kevinadhiguna)
